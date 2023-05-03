@@ -39,3 +39,13 @@ SELECT first_name, last_name, sex
 FROM employee
 WHERE first_name = 'Hercules'
 AND last_name LIKE 'B%';
+
+-- List each employee in the Sales department, including their employee number, last name, and first name.
+
+SELECT de.emp_no, em.last_name, em.first_name, dept.dept_name
+FROM dept_employee de
+INNER JOIN employee em
+ON de.emp_no = em.emp_no
+INNER JOIN department dept
+ON de.dept_no = dept.dept_no
+WHERE dept_name = 'Sales';
