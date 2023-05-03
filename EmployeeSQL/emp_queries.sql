@@ -49,3 +49,14 @@ ON de.emp_no = em.emp_no
 INNER JOIN department dept
 ON de.dept_no = dept.dept_no
 WHERE dept_name = 'Sales';
+
+-- List each employee in the Sales and Development departments, including their employee number, 
+-- last name, first name, and department name.
+
+SELECT de.emp_no, em.last_name, em.first_name, dept.dept_name
+FROM dept_employee de
+INNER JOIN employee em
+ON de.emp_no = em.emp_no
+INNER JOIN department dept
+ON de.dept_no = dept.dept_no
+WHERE dept_name IN ('Sales','Development');
