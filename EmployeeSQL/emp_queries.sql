@@ -21,3 +21,14 @@ INNER JOIN manager ma
 ON dep.dept_no = ma.dept_no
 INNER JOIN employee em
 ON ma.emp_no = em.emp_no;
+
+-- List the department number for each employee along with that employee’s employee number, last name, 
+-- first name, and department name.
+
+SELECT de.dept_no, de.emp_no, em.last_name, em.first_name, dept.dept_name
+FROM dept_employee de
+INNER JOIN employee em
+ON de.emp_no = em.emp_no
+INNER JOIN department dept
+ON de.dept_no = dept.dept_no;
+
